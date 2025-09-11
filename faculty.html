@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Faculty Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      color: #333;
+      background: #f9f9f9;
+    }
+
+    /* ---------------- HERO SECTION ---------------- */
+    .hero-section {
+      position: relative;
+      background: url('assets/banner-faculty.jpg') center/cover no-repeat;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+    }
+    .hero-section h1 {
+      position: relative;
+      font-size: 40px;
+      font-weight: 600;
+      z-index: 1;
+    }
+
+    /* ---------------- FACULTY DETAILS ---------------- */
+    .faculty-wrapper {
+      padding: 60px 20px;
+    }
+    .faculty-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .faculty-left, .faculty-right { flex: 1; min-width: 300px; }
+
+    /* Left card */
+    .faculty-left {
+      text-align: center;
+      padding: 20px;
+      border-right: 1px solid #eee;
+    }
+    .faculty-left img {
+      width: 220px; height: 260px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      transition: transform 0.3s;
+    }
+    .faculty-left img:hover { transform: scale(1.05); }
+    .faculty-left h2 {
+      margin: 10px 0;
+      font-size: 22px;
+      font-weight: 600;
+    }
+    .faculty-left p {
+      margin: 5px 0;
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* Right card */
+    .faculty-right {
+      padding: 20px 30px;
+    }
+    .faculty-right img {
+      width: 280px; height: 320px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      transition: transform 0.3s;
+    }
+    .faculty-right img:hover { transform: scale(1.05); }
+    .faculty-right h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #e67e22;
+      margin: 0 0 12px;
+    }
+    .faculty-right p {
+      margin: 8px 0;
+      font-size: 16px;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    /* Buttons */
+    .btns { margin-top: 25px; }
+    .btns a {
+      display: inline-block;
+      margin-right: 12px;
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 500;
+      background: linear-gradient(135deg, #0077cc, #005fa3);
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(0,119,204,0.3);
+    }
+    .btns a:hover {
+      background: linear-gradient(135deg, #005fa3, #003d70);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,95,163,0.4);
+    }
+
+    /* Back button */
+    .back-btn {
+      display: inline-block;
+      margin: 40px auto 0;
+      text-align: center;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 500;
+      background: #f0f0f0;
+      border-radius: 10px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+    .back-btn:hover { background: #ddd; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .faculty-details {
+        flex-direction: column;
+        padding: 20px;
+      }
+      .faculty-left {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 30px;
+      }
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: #000;
+      border-bottom: 2px solid #fff;
+    }
+    .nav-inner {
+      max-width: 1440px;
+      margin-inline: auto;
+      padding: 0 4rem;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .logo { width: 152px; height: 49px; object-fit: contain; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: #fff; font-size: 1rem; transition: opacity .25s;
+      text-decoration: none;
+    }
+    .nav-links a:hover { opacity: .7; }
+
+    /* FOOTER (reuse previous styling for consistency) */
+    .footer {
+      background: #090303;
+      color: white;
+      padding: 80px 64px;
+      font-family: 'Inter', sans-serif;
+      margin-top: 80px;
+    }
+    .footer-container { max-width: 1280px; margin: auto; display: flex; flex-direction: column; gap: 64px; }
+    .footer-subscribe { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px; }
+    .subscribe-text h3 { font-size: 16px; font-weight: 600; margin: 0; }
+    .subscribe-text p { font-size: 14px; margin-top: 6px; color: #ccc; }
+    .subscribe-form { display: flex; gap: 12px; flex-wrap: wrap; }
+    .input-wrapper { border: 2px solid rgba(255,255,255,0.8); border-radius: 12px; padding: 10px 16px; }
+    .input-wrapper input { background: transparent; border: none; outline: none; color: white; font-size: 14px; width: 220px; }
+    .subscribe-form button { border: 2px solid white; border-radius: 12px; padding: 10px 24px; color: white; background: transparent; transition: all .3s; }
+    .subscribe-form button:hover { background: white; color: #090303; }
+    .privacy { font-size: 10px; color: #ccc; margin-top: 8px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 48px; justify-content: space-between; }
+    .link-column h4 { font-size: 14px; font-weight: 600; margin-bottom: 12px; }
+    .link-column ul { list-style: none; padding: 0; margin: 0; }
+    .link-column li { margin: 6px 0; }
+    .link-column a { color: white; text-decoration: none; font-size: 13px; transition: color .3s; }
+    .link-column a:hover { color: #bbb; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .footer-bottom-right { font-size: 14px; color: #ccc; }
+    .footer-logo { width: 152px; height: auto; }
+    hr { border: none; border-top: 1px solid rgba(255,255,255,0.7); margin: 24px 0; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <nav class="nav-inner">
+      <img src="https://cdn.builder.io/api/v1/image/assets/5e358c269d9140e1be810ef6482a3f72/0e3123a2b157b6a32c8af04426f673215bee3d90?placeholderIfAbsent=true"
+           alt="Christ CSE Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About us.html">About&nbsp;Us</a></li>
+        <li><a href="ContactUs.html">Contact&nbsp;Us</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="Service-learning.html">Service Learning</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <h1>Faculty Details</h1>
+  </section>
+
+  <!-- FACULTY CONTENT -->
+  <div class="faculty-wrapper">
+    <div id="faculty-detail" class="faculty-details">
+      <!-- Filled dynamically -->
+    </div>
+    <div style="text-align:center;">
+      <a href="index.html#faculty" class="back-btn">← Back to Faculty List</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-subscribe">
+        <div class="subscribe-text">
+          <h3>Subscribe to updates</h3>
+          <p>Stay informed about our latest news and offerings.</p>
+        </div>
+        <form class="subscribe-form">
+          <div class="input-wrapper">
+            <input type="email" placeholder="Your email here" required />
+          </div>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="privacy">By subscribing, you agree to our Privacy Policy.</p>
+      </div>
+      <hr>
+      <div class="footer-links">
+        <div class="link-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Support</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Blog Posts</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">User Guide</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Connect With Us</h4>
+          <ul>
+            <li><a href="#">Social Media</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Support Center</a></li>
+            <li><a href="#">Help Desk</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Stay Updated</h4>
+          <ul>
+            <li><a href="#">Link Twenty One</a></li>
+            <li><a href="#">Link Twenty Two</a></li>
+            <li><a href="#">Link Twenty Three</a></li>
+            <li><a href="#">Link Twenty Four</a></li>
+            <li><a href="#">Link Twenty Five</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Stay Connected</h4>
+          <ul>
+            <li><a href="#">Link Twenty Six</a></li>
+            <li><a href="#">Link Twenty Seven</a></li>
+            <li><a href="#">Link Twenty Eight</a></li>
+            <li><a href="#">Link Twenty Nine</a></li>
+            <li><a href="#">Link Thirty</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e76991aa421e489c54cbc0932fc11287b53692fc?width=304"
+               alt="Department Logo" class="footer-logo" />
+        </div>
+        <div class="footer-bottom-right">
+          <p>© 2025 Sudhanshu & Team. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  async function loadFacultyDetail() {
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+
+    if (!id) {
+      document.getElementById("faculty-detail").innerHTML = "<p>Faculty not found.</p>";
+      return;
+    }
+
+    try {
+      const [resOld, resNew] = await Promise.all([
+        fetch("faculty.json"),
+        fetch("faculty-new.json")
+      ]);
+      const oldData = await resOld.json();
+      const newData = await resNew.json();
+
+      const facultyOld = oldData.find(f => f.id === id);
+      const facultyNew = newData.find(f => f.id === id);
+
+      if (!facultyOld || !facultyNew) {
+        document.getElementById("faculty-detail").innerHTML = "<p>Faculty not found.</p>";
+        return;
+      }
+
+      const html = `
+        <div class="faculty-left">
+          <img src="${facultyOld.image}" alt="${facultyOld.name}">
+          <h2>${facultyOld.name}</h2>
+          <p><strong>Department:</strong> ${facultyOld.department}</p>
+          <p><strong>Specialization:</strong> ${facultyOld.specialization}</p>
+        </div>
+        <div class="faculty-right">
+          <img src="${facultyNew.image}" alt="${facultyNew.name}">
+          <h2>${facultyNew.name}</h2>
+          <p><strong>Specialization:</strong> ${facultyNew.specialization}</p>
+          <p><strong>Department:</strong> ${facultyNew.department}</p>
+          <p><strong>Campus:</strong> Bangalore Campus</p>
+          <p><strong>Qualification:</strong> ME, PhD</p>
+          <div class="btns">
+            <a href="#">Research Gate</a>
+            <a href="#">Google Scholar</a>
+            <a href="#">ORCID</a>
+          </div>
+        </div>
+      `;
+      document.getElementById("faculty-detail").innerHTML = html;
+    } catch (err) {
+      console.error(err);
+      document.getElementById("faculty-detail").innerHTML = "<p>Error loading data.</p>";
+    }
+  }
+
+  loadFacultyDetail();
+</script>
+</body>
+</html>

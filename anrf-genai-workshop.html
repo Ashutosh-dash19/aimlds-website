@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ANRF GenAI Workshop • CHRIST AIML & DS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Times New Roman", serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* ================= NAVBAR ================= */
+    .navbar {
+      background-color: #090303;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid white;
+      z-index: 1000;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1440px;
+      width: 100%;
+      height: 72px;
+      padding: 0 4rem;
+      margin: 0 auto;
+    }
+    .logo {
+      height: 49px;
+      width: 152px;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #ccc;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      background: url("assets/genAI5.jpg") center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      color: #fff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      padding: 20px;
+    }
+    .hero-content h1 {
+      font-size: 56px;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+    .hero-content p {
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    /* ================= SECTIONS ================= */
+    .section {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+    .section h2 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 50px;
+      color: #111;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    .row.reverse {
+      flex-direction: row-reverse;
+    }
+    .text {
+      flex: 1;
+    }
+    .text p {
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    .image {
+      flex: 1;
+      text-align: center;
+    }
+    .image img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    
+
+    /* ================= GALLERY ================= */
+    .gallery {
+      padding: 80px 20px;
+      background: #fff;
+    }
+    .gallery h2 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #111;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+      background: #090303;
+      color: white;
+      padding: 80px 64px;
+      font-family: 'Inter', sans-serif;
+    }
+    .footer-container {
+      max-width: 1280px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+    .footer-subscribe {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    .subscribe-text h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .subscribe-text p {
+      font-size: 14px;
+      margin-top: 6px;
+      color: #ccc;
+    }
+    .subscribe-form {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .input-wrapper {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      padding: 10px 16px;
+    }
+    .input-wrapper input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 14px;
+      width: 220px;
+    }
+    .subscribe-form button {
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 12px;
+      padding: 10px 24px;
+      color: white;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .subscribe-form button:hover {
+      background: white;
+      color: #090303;
+    }
+    .privacy {
+      font-size: 10px;
+      color: #ccc;
+      margin-top: 8px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      justify-content: space-between;
+    }
+    .link-column h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .link-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .link-column li {
+      margin: 6px 0;
+    }
+    .link-column a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.3s ease;
+    }
+    .link-column a:hover {
+      color: #bbb;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      width: 152px;
+      height: auto;
+    }
+    .footer-bottom-right {
+      font-size: 14px;
+      color: #ccc;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+      margin: 24px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .row { flex-direction: column; text-align: center; }
+      .row.reverse { flex-direction: column; }
+      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <nav class="nav-inner">
+      <img src="assets/logo.png" alt="Christ AIML Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About us.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="Service-learning.html">Service Learning</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>ANRF GenAI Workshop</h1>
+      <p>Exploring Future Research Developments with Generative AI Technology Innovations</p>
+    </div>
+  </section>
+
+  <!-- ABOUT WORKSHOP -->
+  <section class="section">
+    <h2>About the Workshop</h2>
+
+    <div class="row">
+      <div class="text">
+        <p>
+          The ANRF Sponsored National Workshop on Generative AI brought together academicians, researchers, and students
+          to explore the emerging opportunities in artificial intelligence. It focused on the transformative impact of GenAI
+          on industries and research domains.
+        </p>
+      </div>
+      <div class="image">
+        <img src="assets/genAI3.jpg" alt="ANRF Workshop Image 1">
+      </div>
+    </div>
+
+    <div class="row reverse">
+      <div class="text">
+        <p>
+          The sessions covered key areas including large language models, prompt engineering, ethical considerations,
+          and hands-on demonstrations of AI tools. Renowned experts shared valuable insights into the role of GenAI
+          in reshaping education, business, and research ecosystems.
+        </p>
+      </div>
+      <div class="image">
+        <img src="assets/genAI7.jpg" alt="ANRF Workshop Image 2">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="text">
+        <p>
+          Participants gained practical exposure through interactive sessions, group discussions, and case studies.
+          This workshop provided a platform for collaboration, innovation, and knowledge exchange,
+          empowering students to embrace AI-driven solutions in their academic and professional journeys.
+        </p>
+      </div>
+      <div class="image">
+        <img src="assets/genAI8.jpg" alt="ANRF Workshop Image 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="assets/genAI17.jpg" alt="Workshop Gallery Image 1">
+      <img src="assets/genAI2.jpg" alt="Workshop Gallery Image 2">
+      <img src="assets/genAI3.jpg" alt="Workshop Gallery Image 3">
+      <img src="assets/genAI4.jpg" alt="Workshop Gallery Image 4">
+      <img src="assets/genAI5.jpg" alt="Workshop Gallery Image 5">
+      <img src="assets/genAI7.jpg" alt="Workshop Gallery Image 6">
+      <img src="assets/genAI8.jpg" alt="Workshop Gallery Image 7">
+      <img src="assets/genAI9.jpg" alt="Workshop Gallery Image 8">
+      <img src="assets/genAI10.jpg" alt="Workshop Gallery Image 9">
+      <img src="assets/genAI11.jpg" alt="Workshop Gallery Image 10">
+      <img src="assets/genAI12.jpg" alt="Workshop Gallery Image 11">
+      <img src="assets/genAI13.jpg" alt="Workshop Gallery Image 12">
+      <img src="assets/genAI14.jpg" alt="Workshop Gallery Image 13">
+      <img src="assets/genAI15.jpg" alt="Workshop Gallery Image 14">
+      <img src="assets/genAI16.jpg" alt="Workshop Gallery Image 15">
+      
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-subscribe">
+        <div class="subscribe-text">
+          <h3>Subscribe to updates</h3>
+          <p>Stay informed about our latest news and offerings.</p>
+        </div>
+        <form class="subscribe-form">
+          <div class="input-wrapper">
+            <input type="email" placeholder="Your email here" required />
+          </div>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="privacy">By subscribing, you agree to our Privacy Policy.</p>
+      </div>
+
+      <hr>
+
+      <div class="footer-links">
+        <div class="link-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="About us.html">About Us</a></li>
+            <li><a href="ContactUs.html">Contact Support</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Blog Posts</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">User Guide</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Connect With Us</h4>
+          <ul>
+            <li><a href="#">Social Media</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Support Center</a></li>
+            <li><a href="#">Help Desk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <img src="assets/logo.png" alt="Department Logo" class="footer-logo" />
+        </div>
+        <div class="footer-bottom-right">
+          <p>© 2025 Sudhanshu & Team. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

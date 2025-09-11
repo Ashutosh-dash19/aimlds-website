@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Postgraduate Programs | Christ University AIML</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9fafc;
+      color: #333;
+    }
+
+
+    /* Section Layout */
+    section {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 60px 8%;
+    }
+    section:nth-child(even) {
+      flex-direction: row-reverse;
+      background: #f3f6fa;
+    }
+
+    .text {
+      flex: 1;
+    }
+    .text h2 {
+      font-size: 26px;
+      color: #e67e22;
+      margin-bottom: 14px;
+    }
+    .text p, .text li {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #444;
+    }
+    .text ul {
+  padding: 0;
+  margin: 12px 0;
+  list-style: none;
+}
+.text ul li {
+  margin: 8px 0;
+  padding-left: 22px;
+  position: relative;
+}
+.text ul li::before {
+  content: "●";      /* black dot instead of tick */
+  position: absolute;
+  left: 0;
+  color: #000;       /* black color */
+  font-size: 14px;   /* adjust size of dot */
+}
+
+
+    .image {
+      flex: 1;
+    }
+    .image img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Table */
+    table {
+      width: 90%;
+      margin: 40px auto;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    th, td {
+      padding: 16px 18px;
+      text-align: left;
+    }
+    th {
+      background: #0077cc;
+      color: white;
+    }
+    tr:nth-child(even) { background: #f9f9f9; }
+    tr:hover td { background: #eef6fc; }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #0077cc, #005fa3);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .btn:hover {
+      background: linear-gradient(135deg, #005fa3, #003d70);
+    }
+
+            /* -------------------------------------------------- */
+        /* NAVBAR                                             */
+        /* -------------------------------------------------- */
+        .navbar {
+            background: #000;
+            border-bottom: 2px solid #fff;
+        }
+
+        .nav-inner {
+            max-width: 1440px;
+            margin-inline: auto;
+            padding: 0 4rem;
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .logo {
+            width: 152px;
+            height: 49px;
+            object-fit: contain;
+        }
+
+        .avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            font-size: 1rem;
+            transition: opacity .25s;
+        }
+
+        .nav-links a:hover {
+            opacity: .7;
+        }
+
+        /* -------------------------------------------------- */
+        /* FOOTER                                             */
+        /* -------------------------------------------------- */
+        /* Footer Section */
+.footer {
+  background: #090303;
+  color: white;
+  padding: 80px 64px;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.footer-subscribe {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.subscribe-text h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subscribe-text p {
+  font-size: 14px;
+  margin-top: 6px;
+  color: #ccc;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.input-wrapper {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  padding: 10px 16px;
+}
+
+.input-wrapper input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 14px;
+  width: 220px;
+}
+
+.subscribe-form button {
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 10px 24px;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background: white;
+  color: #090303;
+}
+
+.privacy {
+  font-size: 10px;
+  color: #ccc;
+  margin-top: 8px;
+}
+
+/* Footer Links Section */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  justify-content: space-between;
+}
+
+.link-column h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.link-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.link-column li {
+  margin: 6px 0;
+}
+
+.link-column a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.3s ease;
+}
+
+.link-column a:hover {
+  color: #bbb;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-bottom-left {
+  flex: 1;
+}
+
+.footer-bottom-right {
+  text-align: right;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-logo {
+  width: 152px;
+  height: auto;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.7);
+  margin: 24px 0;
+}
+  </style>
+</head>
+<body>
+  <!-- ▸▸ NAVBAR ----------------------------------------------------------- -->
+    <header class="navbar">
+        <nav class="nav-inner">
+            <img src="https://cdn.builder.io/api/v1/image/assets/5e358c269d9140e1be810ef6482a3f72/0e3123a2b157b6a32c8af04426f673215bee3d90?placeholderIfAbsent=true"
+                alt="Christ CSE Logo" class="logo">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About us.html">About&nbsp;Us</a></li>
+                <li><a href="ContactUs.html">Contact&nbsp;Us</a></li>
+                <li><a href="newsletter.html">Newsletter</a></li>
+                <li><a href="Service-learning.html">Service Learning</a></li>
+            </ul>
+        </nav>
+    </header>
+
+  <!-- Overview -->
+  <section>
+    <div class="text">
+      <h2>Overview</h2>
+      <p>M. Tech in Data Science is a two year, four semester programme aimed at imparting knowledge in 
+      data science, machine learning, statistics, visualization, and more. It prepares students for regional, 
+      national, and international needs in AI, NLP, and data-driven innovation.</p>
+    </div>
+    <div class="image">
+      <img src="assets/postgrad1.jpg" alt="Overview">
+    </div>
+  </section>
+
+  <!-- Why Choose -->
+  <section>
+    <div class="text">
+      <h2>Why Choose This Course?</h2>
+      <ul>
+        <li>Dedicated Data Science & Analytics Labs</li>
+        <li>Industry 4.0 curriculum aligned with trends</li>
+        <li>Global exposure via student exchange programmes</li>
+        <li>Fasttrack completion option</li>
+        <li>85% PhD-qualified faculty</li>
+        <li>Industry tie-ups for placements & internships</li>
+      </ul>
+    </div>
+    <div class="image">
+      <img src="assets/postgrad2.jpg" alt="Why Choose">
+    </div>
+  </section>
+
+  <!-- What You Will Learn -->
+  <section>
+    <div class="text">
+      <h2>What You Will Learn</h2>
+      <ul>
+        <li>Apply mathematical & data science methods to real problems</li>
+        <li>Data visualization with SPSS & Tableau</li>
+        <li>Web technologies: HTML, CSS, JS, backend</li>
+        <li>Problem-solving using ML & engineering techniques</li>
+        <li>Research writing & professional practices</li>
+      </ul>
+    </div>
+    <div class="image">
+      <img src="assets/postgrad3.jpg" alt="Learning">
+    </div>
+  </section>
+
+  <!-- Modules -->
+  <section>
+    <div class="text">
+      <h2>Modules</h2>
+      <p><strong>Year 1:</strong> DS & Algorithms, Databases, Data Mining, Visualization, Optimization, Big Data, Research Methodology</p>
+      <p><strong>Year 2:</strong> Program Elective, Global Elective, Dissertation, Internship</p>
+    </div>
+    <div class="image">
+      <img src="assets/postgrad4.jpg" alt="Modules">
+    </div>
+  </section>
+
+  <!-- Career -->
+  <section>
+    <div class="text">
+      <h2>Career Prospects</h2>
+      <p>Graduates can work in academia, industries, and research labs with roles in 
+      AI, ML, NLP, Big Data, and Data Visualization. Opportunities extend to entrepreneurship 
+      and global data-driven innovation.</p>
+    </div>
+    <div class="image">
+      <img src="assets/career.jpg" alt="Career">
+    </div>
+  </section>
+
+  <!-- Programme Table -->
+  <section style="flex-direction: column; text-align: center;">
+    <h2>Available Programmes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Programme Name</th>
+          <th>Campus</th>
+          <th>Open From</th>
+          <th>Open Until</th>
+          <th>Status</th>
+          <th>Eligibility</th>
+          <th>Fees</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Master of Technology Data Science</td>
+          <td>Bangalore Kengeri Campus</td>
+          <td>08-Dec-2024</td>
+          <td>18-May-2025</td>
+          <td>Open</td>
+          <td>Eligibility</td>
+          <td>Fees</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="programs.html" class="btn">← Back to Programs</a>
+  </section>
+
+  <!-- ▸▸ FOOTER ----------------------------------------------------------- -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-subscribe">
+                <div class="subscribe-text">
+                    <h3>Subscribe to updates</h3>
+                    <p>Stay informed about our latest news and offerings.</p>
+                </div>
+                <form class="subscribe-form">
+                    <div class="input-wrapper">
+                        <input type="email" placeholder="Your email here" required />
+                    </div>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="privacy">By subscribing, you agree to our Privacy Policy.</p>
+            </div>
+
+            <hr>
+
+            <div class="footer-links">
+                <div class="link-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Blog Posts</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">User Guide</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Partnerships</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Connect With Us</h4>
+                    <ul>
+                        <li><a href="#">Social Media</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Help Desk</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Stay Updated</h4>
+                    <ul>
+                        <li><a href="#">Link Twenty One</a></li>
+                        <li><a href="#">Link Twenty Two</a></li>
+                        <li><a href="#">Link Twenty Three</a></li>
+                        <li><a href="#">Link Twenty Four</a></li>
+                        <li><a href="#">Link Twenty Five</a></li>
+                    </ul>
+                </div>
+                <div class="link-column">
+                    <h4>Stay Connected</h4>
+                    <ul>
+                        <li><a href="#">Link Twenty Six</a></li>
+                        <li><a href="#">Link Twenty Seven</a></li>
+                        <li><a href="#">Link Twenty Eight</a></li>
+                        <li><a href="#">Link Twenty Nine</a></li>
+                        <li><a href="#">Link Thirty</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e76991aa421e489c54cbc0932fc11287b53692fc?width=304"
+                        alt="Department Logo" class="footer-logo" />
+                </div>
+                <div class="footer-bottom-right">
+                    <p>© 2025 Sudhanshu & Team. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

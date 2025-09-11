@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Explore Newsletters</title>
+
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="css/newsletter.css" />
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar-inner">
+      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c6cfcd55332049a9408582f69ed157d9eecf76f0?width=304"
+        alt="Computer Science Department Logo" class="navbar-logo" />
+      <div class="navbar-center">
+        <div class="navbar-links">
+          <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="About us.html">About Us</a>
+            <a href="ContactUs.html">Contact Us</a>
+            <a href="newsletter.html">Newsletter</a>
+            <a href="Service-learning.html">Service Learning</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-text">Welcome Christite</div>
+  </section>
+
+  <!-- FILTER + SEARCH -->
+  <section class="filter-section">
+    <div class="filters">
+      <span class="filter-label">Filter&nbsp;by:</span>
+      <button class="filter-btn active" data-filter="All">All</button>
+      <button class="filter-btn" data-filter="Research">Research</button>
+      <button class="filter-btn" data-filter="Student">Student</button>
+      <button class="filter-btn" data-filter="Faculty">Faculty</button>
+      <button class="filter-btn" data-filter="Industry">Industry</button>
+      <button class="filter-btn" data-filter="General">General</button>
+    </div>
+
+    <div class="search-box">
+      <img
+        src="https://cdn.builder.io/api/v1/image/assets/5e358c269d9140e1be810ef6482a3f72/2cef4ee11033eecb4a19ef2637573b4246bf4c9b"
+        alt="Search icon">
+      <input type="text" id="searchInput" placeholder="Search newsletters…" aria-label="Search newsletters">
+    </div>
+  </section>
+  
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <h1 class="page-title">EXPLORE NEWSLETTERS</h1>
+
+    <section class="newsletter-wrapper">
+      <!-- Main grid (cards will be injected here by JS) -->
+      <div class="newsletter-grid"></div>
+
+      <!-- Sidebar (optional static or dynamic later) -->
+      <aside class="newsletter-sidebar"></aside>
+    </section>
+  </main>
+
+  <!-- ▸ FEATURED -------------------------------------------------------- -->
+    <section class="featured-section">
+      <div class="featured-text">
+        <h2>Empowering Youth through NCC and Academic Stewardship</h2>
+        <p>
+          In this photograph, we proudly see a distinguished group representing the National Cadet Corps (NCC) of CHRIST
+          (Deemed to be University), Bangalore Kengeri Campus, captured during a formal occasion reflecting excellence
+          and discipline.
+        </p>
+        <p>
+          Notably, standing at the far right is Professor Dr. Micheal Moses T, the Head of the Department of Computer
+          Science and Engineering (CSE). His presence alongside the cadets underscores his active involvement in both
+          academic and co‑curricular leadership, and his continued support for student development initiatives such as
+          NCC.
+        </p>
+        <p>
+          His guidance and encouragement have played a vital role in nurturing a culture of integrity, discipline, and
+          holistic growth within the department.
+        </p>
+      </div>
+      <div class="featured-image">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/5e358c269d9140e1be810ef6482a3f72/3ef6e3b9be263448b4ceadbbcd0811abc01335cc?placeholderIfAbsent=true"
+          alt="NCC Group with Professor Dr. Micheal Moses T">
+      </div>
+    </section>
+
+  <!-- ▸▸ FOOTER ----------------------------------------------------------- -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-subscribe">
+        <div class="subscribe-text">
+          <h3>Subscribe to updates</h3>
+          <p>Stay informed about our latest news and offerings.</p>
+        </div>
+        <form class="subscribe-form">
+          <div class="input-wrapper">
+            <input type="email" placeholder="Your email here" required />
+          </div>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="privacy">By subscribing, you agree to our Privacy Policy.</p>
+      </div>
+
+      <hr>
+
+      <div class="footer-links">
+        <div class="link-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Support</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Blog Posts</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div> 
+        <div class="link-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">User Guide</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Connect With Us</h4>
+          <ul>
+            <li><a href="#">Social Media</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Support Center</a></li>
+            <li><a href="#">Help Desk</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Stay Updated</h4>
+          <ul>
+            <li><a href="#">Link Twenty One</a></li>
+            <li><a href="#">Link Twenty Two</a></li>
+            <li><a href="#">Link Twenty Three</a></li>
+            <li><a href="#">Link Twenty Four</a></li>
+            <li><a href="#">Link Twenty Five</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Stay Connected</h4>
+          <ul>
+            <li><a href="#">Link Twenty Six</a></li>
+            <li><a href="#">Link Twenty Seven</a></li>
+            <li><a href="#">Link Twenty Eight</a></li>
+            <li><a href="#">Link Twenty Nine</a></li>
+            <li><a href="#">Link Thirty</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e76991aa421e489c54cbc0932fc11287b53692fc?width=304"
+            alt="Department Logo" class="footer-logo" />
+        </div>
+        <div class="footer-bottom-right">
+          <p>© 2025 Sudhanshu & Team. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PDF MODAL -->
+  <div id="pdfModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <iframe id="pdfFrame" src="" width="100%" height="600px"></iframe>
+    </div>
+  </div>
+
+  <script>
+  // ✅ Data-driven newsletters
+  const newsletters = [
+    {
+      title: "AI Research Breakthroughs",
+      subtitle: "Q3 2023",
+      category: "Research",
+      date: "September 2023",
+      description: "Highlights of the latest AI research from our department.",
+      image: "assets/genAI.jpg",
+      pdf: "assets/sample1.pdf"
+    },
+    {
+      title: "Graduation Experiences",
+      subtitle: "",
+      category: "Student",
+      date: "August 2025",
+      description: "Students reflect on graduation and future paths.",
+      image: "assets/caads1.jpg",
+      pdf: "assets/sample.pdf"
+    }
+    // 👉 Keep adding objects here
+  ];
+
+  const grid = document.querySelector(".newsletter-grid");
+  const itemsPerPage = 16; // 4x4 grid
+  let currentPage = 1;
+  let filteredList = [...newsletters]; // copy of data
+
+  // ✅ Render cards
+  function renderNewsletters(list, page = 1) {
+    grid.innerHTML = "";
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const paginated = list.slice(start, end);
+
+    paginated.forEach(nl => {
+      const card = document.createElement("article");
+      card.className = "newsletter-card";
+      card.setAttribute("data-category", nl.category);
+      card.setAttribute("data-title", nl.title.toLowerCase());
+
+      card.innerHTML = `
+        <img src="${nl.image}" alt="${nl.title}">
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="date">${nl.date}</span>
+            <span class="category">${nl.category}</span>
+          </div>
+          <h3 class="card-title">${nl.title}</h3>
+          ${nl.subtitle ? `<h4 class="card-subtitle">${nl.subtitle}</h4>` : ""}
+          <p class="card-desc">${nl.description}</p>
+          <div class="card-footer">
+            <a href="#" class="read-more" data-pdf="${nl.pdf}">Read More</a>
+            <span class="pdf">
+              PDF
+              <a href="${nl.pdf}" download>
+                <img src="assets/download.png" alt="Download" class="download-btn">
+              </a>
+            </span>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    attachCardEvents(); 
+    renderPagination(list.length, page); 
+  }
+
+  // ✅ Pagination controls
+  function renderPagination(totalItems, page) {
+    let pagination = document.getElementById("pagination");
+    if (!pagination) {
+      pagination = document.createElement("div");
+      pagination.id = "pagination";
+      pagination.className = "pagination";
+      grid.parentNode.appendChild(pagination);
+    }
+    pagination.innerHTML = "";
+
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+    if (totalPages > 1) {
+      // Prev
+      const prevBtn = document.createElement("button");
+      prevBtn.textContent = "Prev";
+      prevBtn.disabled = page === 1;
+      prevBtn.onclick = () => {
+        currentPage--;
+        renderNewsletters(filteredList, currentPage);
+      };
+      pagination.appendChild(prevBtn);
+
+      // Page numbers
+      for (let i = 1; i <= totalPages; i++) {
+        const pageBtn = document.createElement("button");
+        pageBtn.textContent = i;
+        if (i === page) pageBtn.classList.add("active");
+        pageBtn.onclick = () => {
+          currentPage = i;
+          renderNewsletters(filteredList, currentPage);
+        };
+        pagination.appendChild(pageBtn);
+      }
+
+      // Next
+      const nextBtn = document.createElement("button");
+      nextBtn.textContent = "Next";
+      nextBtn.disabled = page === totalPages;
+      nextBtn.onclick = () => {
+        currentPage++;
+        renderNewsletters(filteredList, currentPage);
+      };
+      pagination.appendChild(nextBtn);
+    }
+  }
+
+  // ✅ Modal open/close
+  function attachCardEvents() {
+    document.querySelectorAll(".read-more").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const pdfUrl = link.getAttribute("data-pdf");
+        document.getElementById("pdfFrame").src = pdfUrl;
+        document.getElementById("pdfModal").style.display = "block";
+      });
+    });
+  }
+
+  document.getElementById("closeModal").onclick = () => {
+    document.getElementById("pdfModal").style.display = "none";
+    document.getElementById("pdfFrame").src = "";
+  };
+
+  window.onclick = (e) => {
+    if (e.target === document.getElementById("pdfModal")) {
+      document.getElementById("pdfModal").style.display = "none";
+      document.getElementById("pdfFrame").src = "";
+    }
+  };
+
+  // ✅ Filtering
+  function filterNewsletters(category) {
+    if (category === "All") {
+      filteredList = [...newsletters];
+    } else {
+      filteredList = newsletters.filter(nl => nl.category === category);
+    }
+    currentPage = 1;
+    renderNewsletters(filteredList, currentPage);
+  }
+
+  document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const filter = btn.getAttribute("data-filter");
+      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      filterNewsletters(filter);
+    });
+  });
+
+  // ✅ Searching
+  document.getElementById("searchInput").addEventListener("input", e => {
+    const query = e.target.value.toLowerCase();
+    filteredList = newsletters.filter(nl => nl.title.toLowerCase().includes(query));
+    currentPage = 1;
+    renderNewsletters(filteredList, currentPage);
+  });
+
+  // ✅ Init
+  renderNewsletters(newsletters, currentPage);
+</script>
+
+</body>
+</html>

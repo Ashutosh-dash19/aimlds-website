@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hackathons • CHRIST AIML & DS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Times New Roman", serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* ================= NAVBAR ================= */
+    .navbar {
+      background-color: #090303;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid white;
+      z-index: 1000;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1440px;
+      width: 100%;
+      height: 72px;
+      padding: 0 4rem;
+      margin: 0 auto;
+    }
+    .logo {
+      height: 49px;
+      width: 152px;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #ccc;
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      background: url("assets/hackathon-hero.jpg") center/cover no-repeat;
+      height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      color: #fff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      padding: 20px;
+    }
+    .hero-content h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+    .hero-content p {
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    /* ================= SECTIONS ================= */
+    .section {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+    .section h2 {
+      font-size: 46px;
+      text-align: center;
+      margin-bottom: 60px;
+      color: #111;
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    .row.reverse {
+      flex-direction: row-reverse;
+    }
+    .text {
+      flex: 1;
+    }
+    .text p {
+      font-size: 18px;
+      line-height: 1.8;
+      text-align: justify;
+    }
+    .image {
+      flex: 1;
+      text-align: center;
+    }
+    .image img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* ================= HACKATHON CARD ================= */
+    .hackathon-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      align-items: center;
+      justify-content: center;
+    }
+    .hackathon-card img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+    }
+    .hackathon-content {
+      flex: 1;
+      text-align: left;
+    }
+    .hackathon-content h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #000;
+    }
+    .hackathon-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #444;
+    }
+    .read-more {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #111;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .read-more:hover {
+      background: #333;
+    }
+
+    /* ================= FOOTER ================= */
+    .footer {
+      background: #090303;
+      color: white;
+      padding: 80px 64px;
+      font-family: 'Inter', sans-serif;
+    }
+    .footer-container {
+      max-width: 1280px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+    .footer-subscribe {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+    .subscribe-text h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .subscribe-text p {
+      font-size: 14px;
+      margin-top: 6px;
+      color: #ccc;
+    }
+    .subscribe-form {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .input-wrapper {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-radius: 12px;
+      padding: 10px 16px;
+    }
+    .input-wrapper input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 14px;
+      width: 220px;
+    }
+    .subscribe-form button {
+      background: transparent;
+      border: 2px solid white;
+      border-radius: 12px;
+      padding: 10px 24px;
+      color: white;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .subscribe-form button:hover {
+      background: white;
+      color: #090303;
+    }
+    .privacy {
+      font-size: 10px;
+      color: #ccc;
+      margin-top: 8px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      justify-content: space-between;
+    }
+    .link-column h4 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .link-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .link-column li {
+      margin: 6px 0;
+    }
+    .link-column a {
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.3s ease;
+    }
+    .link-column a:hover {
+      color: #bbb;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      width: 152px;
+      height: auto;
+    }
+    .footer-bottom-right {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.7);
+      margin: 24px 0;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 900px) {
+      .row { flex-direction: column; text-align: center; }
+      .row.reverse { flex-direction: column; }
+      .hackathon-card { flex-direction: column; text-align: center; }
+      .hackathon-content { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <nav class="nav-inner">
+      <img src="assets/logo.png" alt="Christ AIML Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About us.html">About Us</a></li>
+        <li><a href="ContactUs.html">Contact Us</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+        <li><a href="Service-learning.html">Service Learning</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hackathons</h1>
+      <p>Innovating, collaborating, and solving real-world challenges through coding marathons.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT HACKATHONS -->
+  <section class="section">
+    <h2>Why Hackathons Matter</h2>
+
+    <div class="row">
+      <div class="text">
+        <p>
+          Hackathons at CHRIST (Deemed to be University), Department of AIML & Data Science,
+          provide students with a platform to showcase creativity, teamwork, and problem-solving skills.
+          These coding sprints push boundaries, encouraging participants to design impactful
+          AI-powered solutions within a limited timeframe.
+        </p>
+      </div>
+      <div class="image">
+        <img src="assets/hackathon1.jpg" alt="Hackathon Image 1">
+      </div>
+    </div>
+
+    <div class="row reverse">
+      <div class="text">
+        <p>
+          Participants collaborate in teams, brainstorm innovative ideas,
+          and translate concepts into working prototypes.
+          Hackathons foster not just coding expertise but also leadership,
+          time management, and entrepreneurial thinking.
+        </p>
+      </div>
+      <div class="image">
+        <img src="assets/hackathon2.jpg" alt="Hackathon Image 2">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="text">
+        <p>
+          From university-level challenges to national and international competitions,
+          our students actively participate, learn, and compete with the best.
+          These experiences prepare them for industry roles and research-driven futures.
+        </p>
+      </div>
+      <div class="image">
+        <img src="assets/hackathon3.jpg" alt="Hackathon Image 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-subscribe">
+        <div class="subscribe-text">
+          <h3>Subscribe to updates</h3>
+          <p>Stay informed about our latest news and offerings.</p>
+        </div>
+        <form class="subscribe-form">
+          <div class="input-wrapper">
+            <input type="email" placeholder="Your email here" required />
+          </div>
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="privacy">By subscribing, you agree to our Privacy Policy.</p>
+      </div>
+
+      <hr>
+
+      <div class="footer-links">
+        <div class="link-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="About us.html">About Us</a></li>
+            <li><a href="ContactUs.html">Contact Support</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Blog Posts</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Webinars</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">User Guide</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Newsroom</a></li>
+            <li><a href="#">Accessibility</a></li>
+          </ul>
+        </div>
+        <div class="link-column">
+          <h4>Connect With Us</h4>
+          <ul>
+            <li><a href="#">Social Media</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">Support Center</a></li>
+            <li><a href="#">Help Desk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">
+          <img src="assets/logo.png" alt="Department Logo" class="footer-logo" />
+        </div>
+        <div class="footer-bottom-right">
+          <p>© 2025 Sudhanshu & Team. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
